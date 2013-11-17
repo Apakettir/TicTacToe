@@ -7,7 +7,7 @@ public class TicTacToe {
 
    public static void main(String[] args) {
       
-      get(new Route("/hello") {
+      get(new Route("/") {
          @Override
          public Object handle(Request request, Response response) {
             return "Hello World!";
