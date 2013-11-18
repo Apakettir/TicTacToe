@@ -8,4 +8,5 @@ deploy:
   on:
     repo: Apakettir/TicTacToe
 after_script:
-	export STAGING_SERVER=http://morning-stream-2530.herokuapp.com/    
+	export STAGING_SERVER=http://morning-stream-2530.herokuapp.com/
+	sh bin/selenium_test_xvfb
