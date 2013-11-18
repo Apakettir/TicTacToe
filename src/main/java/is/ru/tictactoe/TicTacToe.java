@@ -13,7 +13,8 @@ public class TicTacToe {
       get(new Route("/hello") {
          @Override
          public Object handle(Request request, Response response) {
-            return 0;
+            Integer a1 = Integer.valueOf(request.queryParams("A1"));
+            return 1337;
          }
       });
 
