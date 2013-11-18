@@ -6,11 +6,11 @@ import spark.*;
 public class TicTacToe {
 
    public static void main(String[] args) {
-      
-      get(new Route("/") {
+      staticFileLocation("/public");
+      get(new Route("/hello") {
          @Override
          public Object handle(Request request, Response response) {
-            return "Hello World!";
+            return 0;
          }
       });
 
