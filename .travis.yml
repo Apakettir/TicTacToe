@@ -1,2 +1,11 @@
 language: java
 jdk: openjdk7
+deploy:
+  provider: heroku
+  api_key:
+    secure: HQnqUHho39bQdUz9h0VYs30dHFUQMyY3BTechrvcoam9l11v9asVrHIKGfentA6DSi6KgE9NlUE6bFQew57NZ+QRwKgDWRYvNlZKvfHzIb8pHD31LfWqnjR2z6gYnxhbAjHxVxGalaZVjqwkRvAOkuY1PBrq0RL5I2oj8vHAG7A=
+  app: morning-stream-2530
+  on:
+    repo: Apakettir/TicTacToe
+after_script:
+	export STAGING_SERVER=http://morning-stream-2530.herokuapp.com/    
