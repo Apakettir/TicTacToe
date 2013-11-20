@@ -54,7 +54,7 @@ public class TicTacToe {
 
 
     private Pair convertToArrayCoords(String coords){
-        String[] cc = coords.split("(?!^)");
+        String[] cc = coorgds.split("(?!^)");
         int x = Integer.parseInt(cc[0]) - 1;
         int y = charToInt(cc[1]);
         return new Pair(x, y);
