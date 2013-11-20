@@ -28,7 +28,7 @@ public class TicTacToeTest {
     @Test
     public void testMarkO() {
     	TicTacToe game = new TicTacToe();
-    	game.markX("b3");
+    	game.markX("c2");
     	assertEquals("- - - \n- - - \n- O -\n",game.toString());
     }    
 
