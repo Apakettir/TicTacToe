@@ -31,4 +31,55 @@ public class TicTacToeTest {
     	game.markX("b3");
     	assertEquals("- - - \n- - - \n- O -\n",game.toString());
     }    
+
+    @Test
+    public void testCheckWin(){
+        TicTacToe game = new TicTacToe();
+        game.markX(a1);
+        game.markX(b1);
+        game.markX(c1);
+        boolean jamm = true;
+        assertEquals(jamm, game.checkWin());
+    }
+
+    @Test
+    public void testCheckWin2(){
+        TicTacToe game = new TicTacToe();
+        game.markX(a1);
+        game.markX(a2);
+        game.markX(a3);
+        boolean jamm = true;
+        assertEquals(jamm, game.checkWin());
+
+    }
+
+    @Test
+    public void testCheckWin3(){
+        TicTacToe game = new TicTacToe();
+        game.markX(a1);
+        game.markX(b2);
+        game.markX(c3);
+        boolean jamm = true;
+        assertEquals(jamm, game.checkWin());
+    }
+    @Test
+    public void testCheckWin4(){
+        TicTacToe game = new TicTacToe();
+        game.markX(a1);
+        game.markX(b2);
+        game.markX(a3);
+        boolean jamm = false;
+        assertEquals(jamm, game.checkWin());
+
+    }
+    @Test
+    public void testCheckWin5(){
+        TicTacToe game = new TicTacToe();
+        game.markX(a1);
+        game.markX(a2);
+        game.markX(b3);
+        boolean jamm = false;
+        assertEquals(jamm, game.checkWin());
+
+    }
 }
