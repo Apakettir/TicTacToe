@@ -1,4 +1,28 @@
 -------------------------------------------------------------------------------
 Test set: is.ru.tictactoe.TicTacToeTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in is.ru.tictactoe.TicTacToeTest
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE! - in is.ru.tictactoe.TicTacToeTest
+testMarkX(is.ru.tictactoe.TicTacToeTest)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[X - - 
+- - - 
+- - -]
+> but was:<[- - - 
+- - - 
+- - - ]
+>
+	at org.junit.Assert.assertEquals(Assert.java:123)
+	at org.junit.Assert.assertEquals(Assert.java:145)
+	at is.ru.tictactoe.TicTacToeTest.testMarkX(TicTacToeTest.java:26)
+
+testMarkO(is.ru.tictactoe.TicTacToeTest)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<- - - 
+- - - 
+- [O -]
+> but was:<- - - 
+- - - 
+- [- - ]
+>
+	at org.junit.Assert.assertEquals(Assert.java:123)
+	at org.junit.Assert.assertEquals(Assert.java:145)
+	at is.ru.tictactoe.TicTacToeTest.testMarkO(TicTacToeTest.java:32)
+

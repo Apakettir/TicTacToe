@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.TicTacToeTest" time="0.001" tests="1" errors="0" skipped="0" failures="0">
+<testsuite name="is.ru.tictactoe.TicTacToeTest" time="0.001" tests="3" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="24.45-b08"/>
+    <property name="user.country.format" value="IS"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
@@ -15,29 +16,29 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/magnusolafur/projects/tictactoe"/>
+    <property name="user.dir" value="/Users/freyrfridfinnson/Desktop/HR3/Hugbúnaðarfræði/github/TicTacToe"/>
     <property name="java.runtime.version" value="1.7.0_45-b18"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/15/p6gqj3t5487828gyt3hwnfnm0000gn/T/"/>
+    <property name="java.io.tmpdir" value="/var/folders/lf/l4r_lsfd34702fb8pc2fjw0c0000gn/T/"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
     <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.1.1/libexec/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/magnusolafur/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.library.path" value="/Users/freyrfridfinnson/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.9"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="user.home" value="/Users/magnusolafur"/>
+    <property name="user.home" value="/Users/freyrfridfinnson"/>
     <property name="user.timezone" value="Atlantic/Reykjavik"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
     <property name="java.specification.version" value="1.7"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="magnusolafur"/>
+    <property name="user.name" value="freyrfridfinnson"/>
     <property name="java.class.path" value="/usr/local/Cellar/maven/3.1.1/libexec/boot/plexus-classworlds-2.5.1.jar"/>
     <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
     <property name="java.vm.specification.version" value="1.7"/>
@@ -49,7 +50,7 @@
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="1.7.0_45"/>
-    <property name="java.ext.dirs" value="/Users/magnusolafur/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="java.ext.dirs" value="/Users/freyrfridfinnson/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="/usr/local/Cellar/maven/3.1.1/libexec"/>
@@ -62,4 +63,30 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="testPrint" classname="is.ru.tictactoe.TicTacToeTest" time="0.001"/>
+  <testcase name="testMarkX" classname="is.ru.tictactoe.TicTacToeTest" time="0">
+    <failure message="expected:&lt;[X - - &#10;- - - &#10;- - -]&#10;&gt; but was:&lt;[- - - &#10;- - - &#10;- - - ]&#10;&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<[X - - 
+- - - 
+- - -]
+> but was:<[- - - 
+- - - 
+- - - ]
+>
+	at org.junit.Assert.assertEquals(Assert.java:123)
+	at org.junit.Assert.assertEquals(Assert.java:145)
+	at is.ru.tictactoe.TicTacToeTest.testMarkX(TicTacToeTest.java:26)
+]]></failure>
+  </testcase>
+  <testcase name="testMarkO" classname="is.ru.tictactoe.TicTacToeTest" time="0">
+    <failure message="expected:&lt;- - - &#10;- - - &#10;- [O -]&#10;&gt; but was:&lt;- - - &#10;- - - &#10;- [- - ]&#10;&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<- - - 
+- - - 
+- [O -]
+> but was:<- - - 
+- - - 
+- [- - ]
+>
+	at org.junit.Assert.assertEquals(Assert.java:123)
+	at org.junit.Assert.assertEquals(Assert.java:145)
+	at is.ru.tictactoe.TicTacToeTest.testMarkO(TicTacToeTest.java:32)
+]]></failure>
+  </testcase>
 </testsuite>

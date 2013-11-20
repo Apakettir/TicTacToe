@@ -19,6 +19,16 @@ public class TicTacToeTest {
     	assertEquals("- - - \n- - - \n- - - \n",game.toString());
 
     }
-
-
+    @Test
+    public void testMarkX() {
+    	TicTacToe game = new TicTacToe();
+    	game.markX("a1");
+    	assertEquals("X - - \n- - - \n- - -\n",game.toString());
+    }
+    @Test
+    public void testMarkO() {
+    	TicTacToe game = new TicTacToe();
+    	game.markX("b3");
+    	assertEquals("- - - \n- - - \n- O -\n",game.toString());
+    }    
 }
