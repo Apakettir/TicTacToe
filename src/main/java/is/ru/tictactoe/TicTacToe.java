@@ -63,8 +63,8 @@ public class TicTacToe {
     //helper function for the convertToArrayCoords method to convert char to the correct integer
     private int charToInt(String c){
         if(c.equals("a")) return 0;
-        else if(c.equals("a")) return 1;
-        else if (c.equals("a")) return 2;
+        else if(c.equals("b")) return 1;
+        else if (c.equals("c")) return 2;
         else throw new IllegalArgumentException("Illegal character");
     }
 
