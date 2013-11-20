@@ -45,7 +45,10 @@ public class TicTacToe {
 
     }
 
-    private void checkWin(){
+    private boolean isEmpty(int x, int y){
+       return board[y][x] == '-';
+    }
+    public boolean checkWin(){
 
     }
 
