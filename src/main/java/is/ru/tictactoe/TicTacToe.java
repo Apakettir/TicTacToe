@@ -6,10 +6,10 @@ public class TicTacToe {
     public static final int n=3;
     public static final int m=3;
 
-    private class pair{
+    private class Pair{
         private int x;
         private int y;
-        public pair(int x, int y){
+        public Pair(int x, int y){
             this.x = x;
             this.y = y;
         }
@@ -50,22 +50,22 @@ public class TicTacToe {
     }
 
 
-    private pair convertToArrayCoords(String coords){
-        char[] cc = coords.toCharArray();
+    private Pair convertToArrayCoords(String coords){
+        String[] cc = coords.split("(?!^)");
         int x = Integer.parseInt(cc[0]) - 1;
         int y = charToInt(cc[1]);
         return new Pair(x, y);
     }
 
     //helper function for the convertToArrayCoords method to convert char to the correct integer
-    private int charToInt(char c){
-        if(c == 'a') return 0;
-        else if(c == 'b') return 1;
-        else if (c == 'c') return 2;
+    private int charToInt(String c){
+        if(c.equals("a")) return 0;
+        else if(c.equals("a")) return 1;
+        else if (c.equals("a")) return 2;
         else throw new IllegalArgumentException("Illegal character");
     }
 
     public static void main(String[] args) {
-    
+
     }
 }
