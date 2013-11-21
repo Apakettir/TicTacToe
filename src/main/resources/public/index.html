@@ -34,19 +34,19 @@
         <table>
             <thead></thead>
             <tr>
-              <td ><input id="A1" class="btn" type= "button" name="a1" value="" onclick="markbox(this)"></td>
-              <td ><input id="A2" class="btn" type= "button" name="a2" value="" onclick="markbox(this)"></td>
-              <td ><input id="A3" class="btn" type= "button" name="a3" value="" onclick="markbox(this)"></td>
+              <td ><input id="A1" class="btn" type= "button" name="a1" value="" onclick="markbox(this, 1)"></td>
+              <td ><input id="A2" class="btn" type= "button" name="a2" value="" onclick="markbox(this, 2)"></td>
+              <td ><input id="A3" class="btn" type= "button" name="a3" value="" onclick="markbox(this, 3)"></td>
             </tr>
             <tr>
-              <td ><input id="B1" class="btn" type= "button" name="b1" value="" onclick="markbox(this)"></td>
-              <td ><input id="B2" class="btn" type= "button" name="b2" value="" onclick="markbox(this)"></td>
-              <td ><input id="B3" class="btn" type= "button" name="b3" value="" onclick="markbox(this)"></td>
+              <td ><input id="B1" class="btn" type= "button" name="b1" value="" onclick="markbox(this, 4)"></td>
+              <td ><input id="B2" class="btn" type= "button" name="b2" value="" onclick="markbox(this, 5)"></td>
+              <td ><input id="B3" class="btn" type= "button" name="b3" value="" onclick="markbox(this, 6)"></td>
             </tr>
             <tr>
-              <td ><input id="C1" class="btn" type= "button" name="c1" value="" onclick="markbox(this)"></td>
-              <td ><input id="C2" class="btn" type= "button" name="c2" value="" onclick="markbox(this)"></td>
-              <td ><input id="C3" class="btn" type= "button" name="c3" value="" onclick="markbox(this)"></td>
+              <td ><input id="C1" class="btn" type= "button" name="c1" value="" onclick="markbox(this, 7)"></td>
+              <td ><input id="C2" class="btn" type= "button" name="c2" value="" onclick="markbox(this, 8)"></td>
+              <td ><input id="C3" class="btn" type= "button" name="c3" value="" onclick="markbox(this, 9)"></td>
           </tr>
         </table>  
       </div>
@@ -60,7 +60,7 @@
     <script type="text/javascript">
     var cell;
     var symbol = 1;
-    function markbox(cell){
+    function markbox(cell, e){
       if (cell.value == ""){
         cell.value=symbol;
 
@@ -70,7 +70,7 @@
           symbol = 1;
       }
       else {
-        alert("Occupied");
+        alert(e);
       }
       /senda value-id a cell og symbolid sem for inn i tad a JAVA/
     }

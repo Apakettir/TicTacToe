@@ -1,6 +1,6 @@
 package is.ru.tictactoe;
-//import static spark.Spark.*;
-//import spark.*;
+import static spark.Spark.*;
+import spark.*;
 
 public class TicTacToe {
     private char board[][];
@@ -128,7 +128,7 @@ public class TicTacToe {
     }
 
     public static void main(String[] args) {
-        /*staticFileLocation("/public");
+        staticFileLocation("/public");
         
         setPort(Integer.valueOf(System.getenv("PORT")));
 
@@ -146,7 +146,7 @@ public class TicTacToe {
                 Integer b = Integer.valueOf(request.queryParams("b"));
                 return a + b;
             }
-        });*/        
+        });      
 
     }
 }
