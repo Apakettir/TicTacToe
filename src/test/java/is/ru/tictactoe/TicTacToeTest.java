@@ -31,7 +31,6 @@ public class TicTacToeTest {
     	game.markO("c2");
     	assertEquals("- - - \n- - - \n- O - \n",game.toString());
     }    
-/*
     @Test
     public void testCheckWin(){
         TicTacToe game = new TicTacToe();
@@ -81,5 +80,5 @@ public class TicTacToeTest {
         boolean jamm = false;
         assertEquals(jamm, game.checkWin());
 
-    }*/
+    }
 }
