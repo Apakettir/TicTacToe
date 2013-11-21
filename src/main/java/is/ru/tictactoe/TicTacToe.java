@@ -37,12 +37,17 @@ public class TicTacToe {
         return str;
     }
 
-    public void markX(String coords){
+    private void mark(char merki, String coords){
+        Pair parid = convertToArrayCoords(coords);
+        this.board[parid.y][parid.x] = merki;
+    }
 
+    public void markX(String coords){
+        mark('X', coords);
     }
 
     public void markO(String coords){
-
+        mark('O', coords);
     }
 
     private boolean isEmpty(int x, int y){
@@ -54,9 +59,9 @@ public class TicTacToe {
 
 
     private Pair convertToArrayCoords(String coords){
-        String[] cc = coorgds.split("(?!^)");
-        int x = Integer.parseInt(cc[0]) - 1;
-        int y = charToInt(cc[1]);
+        String[] cc = coords.split("(?!^)");
+        int x = Integer.parseInt(cc[1]) - 1;
+        int y = charToInt(cc[0]);
         return new Pair(x, y);
     }
 
