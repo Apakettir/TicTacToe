@@ -31,15 +31,14 @@ public class TicTacToeTest {
     	game.markO("c2");
     	assertEquals("- - - \n- - - \n- O - \n",game.toString());
     }    
-/*
     @Test
     public void testCheckWin(){
         TicTacToe game = new TicTacToe();
         game.markX("a1");
         game.markX("b1");
         game.markX("c1");
-        boolean jamm = true;
-        assertEquals(jamm, game.checkWin());
+        boolean check = true;
+        assertEquals(check, game.checkWin());
     }
 
     @Test
@@ -48,8 +47,8 @@ public class TicTacToeTest {
         game.markX("a1");
         game.markX("a2");
         game.markX("a3");
-        boolean jamm = true;
-        assertEquals(jamm, game.checkWin());
+        boolean check = true;
+        assertEquals(check, game.checkWin());
 
     }
 
@@ -59,8 +58,8 @@ public class TicTacToeTest {
         game.markX("a1");
         game.markX("b2");
         game.markX("c3");
-        boolean jamm = true;
-        assertEquals(jamm, game.checkWin());
+        boolean check = true;
+        assertEquals(check, game.checkWin());
     }
     @Test
     public void testCheckWin4(){
@@ -68,8 +67,8 @@ public class TicTacToeTest {
         game.markX("a1");
         game.markX("b2");
         game.markX("a3");
-        boolean jamm = false;
-        assertEquals(jamm, game.checkWin());
+        boolean check = false;
+        assertEquals(check, game.checkWin());
 
     }
     @Test
@@ -78,8 +77,8 @@ public class TicTacToeTest {
         game.markX("a1");
         game.markX("a2");
         game.markX("b3");
-        boolean jamm = false;
-        assertEquals(jamm, game.checkWin());
+        boolean check = false;
+        assertEquals(check, game.checkWin());
 
-    }*/
+    }
 }

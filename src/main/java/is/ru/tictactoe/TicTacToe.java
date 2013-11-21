@@ -1,4 +1,6 @@
 package is.ru.tictactoe;
+//import static spark.Spark.*;
+//import spark.*;
 
 public class TicTacToe {
     private char board[][];
@@ -37,9 +39,11 @@ public class TicTacToe {
         return str;
     }
 
-    private void mark(char merki, String coords){
-        Pair parid = convertToArrayCoords(coords);
-        this.board[parid.y][parid.x] = merki;
+    private void mark(char logo, String coords){
+        Pair thePair = convertToArrayCoords(coords);
+        if(isEmpty(thePair.x, thePair.y)){
+            this.board[thePair.y][thePair.x] = logo;
+        }
     }
 
     public void markX(String coords){
@@ -54,7 +58,57 @@ public class TicTacToe {
        return board[y][x] == '-';
     }
     public boolean checkWin(){
-        return true;
+        if(((this.board[0][0] == 'X') && (this.board[0][1] == 'X') && (this.board[0][2] == 'X'))){
+            return true;
+        }
+        else if(((this.board[0][0] == 'O') && (this.board[0][1] == 'O') && (this.board[0][2] == 'O'))){
+            return true;
+        }
+        else if(((this.board[1][0] == 'X') && (this.board[1][1] == 'X') && (this.board[1][2] == 'X'))){
+            return true;
+        }
+        else if(((this.board[1][0] == 'O') && (this.board[1][1] == 'O') && (this.board[1][2] == 'O'))){
+            return true;
+        }
+        else if(((this.board[2][0] == 'X') && (this.board[2][1] == 'X') && (this.board[2][2] == 'X'))){
+            return true;
+        }
+        else if(((this.board[2][0] == 'O') && (this.board[2][1] == 'O') && (this.board[2][2] == 'O'))){
+            return true;
+        }
+        else if(((this.board[0][0] == 'X') && (this.board[1][0] == 'X') && (this.board[2][0] == 'X'))){
+            return true;
+        }
+        else if(((this.board[0][0] == 'O') && (this.board[1][0] == 'O') && (this.board[2][0] == 'O'))){
+            return true;
+        }
+        else if(((this.board[0][1] == 'X') && (this.board[1][1] == 'X') && (this.board[2][1] == 'X'))){
+            return true;
+        }
+        else if(((this.board[0][1] == 'O') && (this.board[1][1] == 'O') && (this.board[2][1] == 'O'))){
+            return true;
+        }
+        else if(((this.board[0][2] == 'X') && (this.board[1][2] == 'X') && (this.board[2][2] == 'X'))){
+            return true;
+        }
+        else if(((this.board[0][2] == 'O') && (this.board[1][2] == 'O') && (this.board[2][2] == 'O'))){
+            return true;
+        }
+        else if(((this.board[0][0] == 'X') && (this.board[1][1] == 'X') && (this.board[2][2] == 'X'))){
+            return true;
+        }
+        else if(((this.board[0][0] == 'O') && (this.board[1][1] == 'O') && (this.board[2][2] == 'O'))){
+            return true;
+        }
+        else if(((this.board[0][2] == 'X') && (this.board[1][1] == 'X') && (this.board[2][0] == 'X'))){
+            return true;
+        }
+        else if(((this.board[0][2] == 'O') && (this.board[1][1] == 'O') && (this.board[2][0] == 'O'))){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 
@@ -74,6 +128,27 @@ public class TicTacToe {
     }
 
     public static void main(String[] args) {
+        /*staticFileLocation("/public");
+        
+        setPort(Integer.valueOf(System.getenv("PORT")));
+
+        get(new Route("/hello") {
+            @Override
+            public Object handle(Request request, Response response) {
+                return "Hello World!";
+            }
+        });
+        
+        post(new Route("/add") {
+            @Override
+            public Object handle(Request request, Response response) {
+                Integer a = Integer.valueOf(request.queryParams("a"));
+                Integer b = Integer.valueOf(request.queryParams("b"));
+                return a + b;
+            }
+        });*/        
 
     }
 }
+
+
