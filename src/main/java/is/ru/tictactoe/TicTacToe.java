@@ -37,12 +37,17 @@ public class TicTacToe {
         return str;
     }
 
-    public void markX(String coords){
+    private void mark(char merki, String coords){
+        Pair parid = convertToArrayCoords(coords);
+        this.board[parid.y][parid.x] = merki;
+    }
 
+    public void markX(String coords){
+        mark('X', coords);
     }
 
     public void markO(String coords){
-
+        mark('O', coords);
     }
 
     private boolean isEmpty(int x, int y){
@@ -55,16 +60,16 @@ public class TicTacToe {
 
     private Pair convertToArrayCoords(String coords){
         String[] cc = coords.split("(?!^)");
-        int x = Integer.parseInt(cc[0]) - 1;
-        int y = charToInt(cc[1]);
+        int x = Integer.parseInt(cc[1]) - 1;
+        int y = charToInt(cc[0]);
         return new Pair(x, y);
     }
 
     //helper function for the convertToArrayCoords method to convert char to the correct integer
     private int charToInt(String c){
         if(c.equals("a")) return 0;
-        else if(c.equals("a")) return 1;
-        else if (c.equals("a")) return 2;
+        else if(c.equals("b")) return 1;
+        else if (c.equals("c")) return 2;
         else throw new IllegalArgumentException("Illegal character");
     }
 
