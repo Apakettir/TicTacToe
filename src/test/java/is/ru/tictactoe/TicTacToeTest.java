@@ -81,4 +81,14 @@ public class TicTacToeTest {
         assertEquals(check, game.checkWin());
 
     }
+    @Test
+    public void testCheckWin6(){
+        TicTacToe game = new TicTacToe();
+        game.markX("a1");
+        game.markX("a2");
+        game.markO("b3");
+        boolean check = false;
+        assertEquals(check, game.checkWin());
+
+}	
 }
