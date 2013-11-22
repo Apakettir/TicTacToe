@@ -60,13 +60,6 @@ public class TicTacToe {
         }
     }
 
-   /* public void markX(String coords){
-        mark('X', coords);
-    }
-
-    public void markO(String coords){
-        mark('O', coords); */
-
     private boolean isEmpty(int x, int y){
        return board[y][x] == '-';
     }
@@ -123,8 +116,25 @@ public class TicTacToe {
             return false;
         }
     }
+    public void resetBoard(){
+           for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board.length; j++){
+                board[i][j] = '-'; 
+            }
+        }
+        player1Turn=true;
+      
+    }
 
+    public boolean isFull(){
 
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board.length; j++){
+                if(board[i][j] == '-') return false;
+            }
+        }
+        return true;
+    }
     public Pair convertToArrayCoords(String coords){
         String[] cc = coords.split("(?!^)");
         int x = Integer.parseInt(cc[1]) - 1;
@@ -133,36 +143,6 @@ public class TicTacToe {
     }
 
     public static void main(String[] args) {
-        // staticFileLocation("/public");
-        // final TicTacToe game = new TicTacToe();
-        
-        // setPort(Integer.valueOf(System.getenv("PORT")));
-
-        // get(new Route("/hello") {
-        //     @Override
-        //     public Object handle(Request request, Response response) {
-        //         return "Hello World!";
-        //     }
-        // });
-        
-        // get(new Route("/add") {
-        //     @Override
-        //     public Object handle(Request request, Response response) {
-        //         String a = request.queryParams("e");
-        //         Pair newPair = game.convertToArrayCoords(a);
-        //         //Integer b = Integer.valueOf(request.queryParams("b"));
-        //         System.out.println(newPair);
-        //         return a;
-        //     }
-        // });
-
-        /*get(new Route("/") {
-            @Override
-            public Object handle(Request request, Response response) {
-                return "Hello World!";
-            }
-        });     */ 
-
     }
 }
 

@@ -14,7 +14,7 @@
       font-size: 90px;
       width: 100px;
       height: 100px;
-      border: 1px solid black;
+      
     }
     #tictactoe{
      width: 310px;
@@ -23,11 +23,50 @@
     .btn{
       width: 90%;
       height: 90%;
+
     }
+    #playagain{
+      margin: 0 auto;
+      width: 100px;
+      height: 50px;
+    }
+    .v{
+      border-left:1px solid #000;
+      border-right:1px solid #000;
+}
+
+    .h{
+        border-top:1px solid #000;
+        border-bottom:1px solid #000;
+    }
+   td > input{
+      border: none;
+      background: transparent;
+      height:99px;
+      width:99px;
+      vertical-align:middle;
+   
+   }
+  #playagain input{
+    width:100px;
+    height:40px;
+    background:rgb(255,255,255);
+    border:2px solid rgba(10,10,10,.3);
+    border-radius:5px;
+    font-weight:bold;
+  }
+  body{
+    font-family:helvetica;
+
+  }
+  h1{
+    text-align:center;
+  }
+
     </style>
   </head>
   <body>
-
+    <h1>Tic Tac Toe</h1>
 
     <form method="post" action="/add" class="form-inline" role="form">
       <div id="tictactoe"> 
@@ -35,22 +74,25 @@
             <thead></thead>
             <tr>
               <td ><input id="A1" class="btn" type= "button" name="a1" value="" onclick="markbox(this, 11)"></td>
-              <td ><input id="A2" class="btn" type= "button" name="a2" value="" onclick="markbox(this, 12)"></td>
+              <td class="v"><input id="A2" class="btn" type= "button" name="a2" value="" onclick="markbox(this, 12)"></td>
               <td ><input id="A3" class="btn" type= "button" name="a3" value="" onclick="markbox(this, 13)"></td>
             </tr>
             <tr>
-              <td ><input id="B1" class="btn" type= "button" name="b1" value="" onclick="markbox(this, 21)"></td>
-              <td ><input id="B2" class="btn" type= "button" name="b2" value="" onclick="markbox(this, 22)"></td>
-              <td ><input id="B3" class="btn" type= "button" name="b3" value="" onclick="markbox(this, 23)"></td>
+              <td class="h"><input id="B1" class="btn" type= "button" name="b1" value="" onclick="markbox(this, 21)"></td>
+              <td class="v h"><input id="B2" class="btn" type= "button" name="b2" value="" onclick="markbox(this, 22)"></td>
+              <td class="h"><input id="B3" class="btn" type= "button" name="b3" value="" onclick="markbox(this, 23)"></td>
             </tr>
             <tr>
               <td ><input id="C1" class="btn" type= "button" name="c1" value="" onclick="markbox(this, 31)"></td>
-              <td ><input id="C2" class="btn" type= "button" name="c2" value="" onclick="markbox(this, 32)"></td>
+              <td class="v"><input id="C2" class="btn" type= "button" name="c2" value="" onclick="markbox(this, 32)"></td>
               <td ><input id="C3" class="btn" type= "button" name="c3" value="" onclick="markbox(this, 33)"></td>
           </tr>
         </table>  
       </div>
     </form>
+    <div id="playagain">
+    <!--<input type="button" value="Play Again!" onclick="refresh()">-->
+    </div>
     <p id="test" class="test"></p>
 
     <!-- load jquery -->
@@ -66,12 +108,21 @@
         cell.value=symbol;
         $.get("add", {e: e}, function( data ) {
           console.log(data);
-        })
-
-        if(symbol == 1)
+          var json = JSON.parse(data);
+          if(symbol == 1)
           symbol = 0;
         else 
           symbol = 1;
+        if (json.win === true) {
+          var msg = "Player " + (symbol + 1) + " wins";
+          alert(msg)
+          location.reload();
+        }
+        else if(json.full === true){
+          alert("It's a tie!");
+          location.reload();
+        }
+        }) 
       }
       else {
         alert("Occupied");
@@ -92,6 +143,10 @@
         
       });
     });
+
+    function refresh(x){
+      location.reload();
+    }
     </script>
   </body>
 </html>
