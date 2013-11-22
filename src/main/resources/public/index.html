@@ -51,7 +51,7 @@
         </table>  
       </div>
     </form>
-    <p id="test" class="test">Blah</p>
+    <p id="test" class="test"></p>
 
     <!-- load jquery -->
    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -61,8 +61,12 @@
     var cell;
     var symbol = 1;
     function markbox(cell, e){
+      document.getElementById("test").innerHTML=e;
       if (cell.value == ""){
         cell.value=symbol;
+        $.get("add", {e: e}, function( data ) {
+          console.log(data);
+        })
 
         if(symbol == 1)
           symbol = 0;
@@ -70,9 +74,8 @@
           symbol = 1;
       }
       else {
-        alert(e);
+        alert("Occupied");
       }
-      /senda value-id a cell og symbolid sem for inn i tad a JAVA/
     }
     $(document).ready(function() {
       var form = $('form');

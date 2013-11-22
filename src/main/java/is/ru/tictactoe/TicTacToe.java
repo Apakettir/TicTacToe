@@ -139,14 +139,22 @@ public class TicTacToe {
             }
         });
         
-        post(new Route("/add") {
+        get(new Route("/add") {
             @Override
             public Object handle(Request request, Response response) {
-                Integer a = Integer.valueOf(request.queryParams("a"));
-                Integer b = Integer.valueOf(request.queryParams("b"));
-                return a + b;
+                Integer a = Integer.valueOf(request.queryParams("e"));
+                //Integer b = Integer.valueOf(request.queryParams("b"));
+                System.out.println(a);
+                return a;
             }
-        });      
+        });
+
+        /*get(new Route("/") {
+            @Override
+            public Object handle(Request request, Response response) {
+                return "Hello World!";
+            }
+        });     */ 
 
     }
 }
