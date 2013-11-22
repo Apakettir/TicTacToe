@@ -101,7 +101,7 @@
     <!-- use ajax to submit form, retreive the result and display on the page -->
     <script type="text/javascript">
     var cell;
-    var symbol = 1;
+    var symbol = "X";
     function markbox(cell, e){
       document.getElementById("test").innerHTML=e;
       if (cell.value == ""){
@@ -109,12 +109,15 @@
         $.get("add", {e: e}, function( data ) {
           console.log(data);
           var json = JSON.parse(data);
-          if(symbol == 1)
-          symbol = 0;
+          if(symbol == "X")
+          symbol = "O";
         else 
-          symbol = 1;
+          symbol = "X";
         if (json.win === true) {
-          var msg = "Player " + (symbol + 1) + " wins";
+          if(symbol==="X")
+          var msg = "Player 2 wins";
+          else if(symbol === "O")
+            var msg = "Player 1 wins";
           alert(msg)
           location.reload();
         }
