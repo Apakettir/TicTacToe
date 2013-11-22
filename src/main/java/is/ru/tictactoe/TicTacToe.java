@@ -1,12 +1,13 @@
 package is.ru.tictactoe;
-import static spark.Spark.*;
-import spark.*;
+//import static spark.Spark.*;
+//import spark.*;
 
 public class TicTacToe {
     private char board[][];
+    private boolean player1Turn;
 
-    public static final int n=3;
-    public static final int m=3;
+    private static final int n=3;
+    private static final int m=3;
 
     private class Pair{
         private int x;
@@ -15,10 +16,14 @@ public class TicTacToe {
             this.x = x;
             this.y = y;
         }
+        public String toString(){
+            return x + " " + y;
+        }
     }
 
     public TicTacToe(){
         board = new char[n][m];
+        player1Turn = true;
         for(int i=0; i<board.length; i++)
         {
             for (int j=0; j<board.length; j++)
@@ -39,20 +44,28 @@ public class TicTacToe {
         return str;
     }
 
-    private void mark(char logo, String coords){
+    public void mark(String coords){
+        char logo;
+        if (player1Turn) {
+            logo = 'X';
+            player1Turn = false;
+        }
+        else {
+            logo = 'O';
+            player1Turn = true;
+        }
         Pair thePair = convertToArrayCoords(coords);
         if(isEmpty(thePair.x, thePair.y)){
-            this.board[thePair.y][thePair.x] = logo;
+            board[thePair.y][thePair.x] = logo;
         }
     }
 
-    public void markX(String coords){
+   /* public void markX(String coords){
         mark('X', coords);
     }
 
     public void markO(String coords){
-        mark('O', coords);
-    }
+        mark('O', coords); */
 
     private boolean isEmpty(int x, int y){
        return board[y][x] == '-';
@@ -112,42 +125,36 @@ public class TicTacToe {
     }
 
 
-    private Pair convertToArrayCoords(String coords){
+    public Pair convertToArrayCoords(String coords){
         String[] cc = coords.split("(?!^)");
         int x = Integer.parseInt(cc[1]) - 1;
-        int y = charToInt(cc[0]);
+        int y = Integer.parseInt(cc[0]) - 1;
         return new Pair(x, y);
     }
 
-    //helper function for the convertToArrayCoords method to convert char to the correct integer
-    private int charToInt(String c){
-        if(c.equals("a")) return 0;
-        else if(c.equals("b")) return 1;
-        else if (c.equals("c")) return 2;
-        else throw new IllegalArgumentException("Illegal character");
-    }
-
     public static void main(String[] args) {
-        staticFileLocation("/public");
+        // staticFileLocation("/public");
+        // final TicTacToe game = new TicTacToe();
         
-        setPort(Integer.valueOf(System.getenv("PORT")));
+        // setPort(Integer.valueOf(System.getenv("PORT")));
 
-        get(new Route("/hello") {
-            @Override
-            public Object handle(Request request, Response response) {
-                return "Hello World!";
-            }
-        });
+        // get(new Route("/hello") {
+        //     @Override
+        //     public Object handle(Request request, Response response) {
+        //         return "Hello World!";
+        //     }
+        // });
         
-        get(new Route("/add") {
-            @Override
-            public Object handle(Request request, Response response) {
-                Integer a = Integer.valueOf(request.queryParams("e"));
-                //Integer b = Integer.valueOf(request.queryParams("b"));
-                System.out.println(a);
-                return a;
-            }
-        });
+        // get(new Route("/add") {
+        //     @Override
+        //     public Object handle(Request request, Response response) {
+        //         String a = request.queryParams("e");
+        //         Pair newPair = game.convertToArrayCoords(a);
+        //         //Integer b = Integer.valueOf(request.queryParams("b"));
+        //         System.out.println(newPair);
+        //         return a;
+        //     }
+        // });
 
         /*get(new Route("/") {
             @Override
