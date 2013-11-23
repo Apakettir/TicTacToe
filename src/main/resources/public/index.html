@@ -135,7 +135,9 @@
       }
     }
     $(document).ready(function() {
-      $.get("hello");
+      $.get("hello", function(dt){
+        console.log(dt);
+      });
     });
 
     function refresh(x){
