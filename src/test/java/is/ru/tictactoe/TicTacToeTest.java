@@ -98,4 +98,36 @@ public class TicTacToeTest {
         boolean check = false;
         assertEquals(check, game.checkWin());	
     }
+    @Test
+    public void testBoardFull(){
+        TicTacToe game = new TicTacToe();
+        game.mark("11");
+        game.mark("12");
+        game.mark("13");
+        game.mark("21");
+        game.mark("22");
+        game.mark("23");
+        game.mark("31");
+        game.mark("32");
+        game.mark("33");
+        boolean check = true;
+        assertEquals(check, game.isFull()); 
+    }
+    @Test
+    public void testReset(){
+        TicTacToe game = new TicTacToe();
+        game.mark("11");
+        game.mark("12");
+        game.mark("13");
+        game.mark("21");
+        game.mark("22");
+        game.mark("23");
+        game.mark("31");
+        game.mark("32");
+        game.mark("33");
+        game.resetBoard(); 
+        assertEquals("- - - \n- - - \n- - - \n", game.toString());
+    }
+    
+       
 }
