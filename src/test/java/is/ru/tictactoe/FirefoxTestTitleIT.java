@@ -30,7 +30,7 @@ public class FirefoxTestTitleIT {
   @Test
   public void titleShouldBeHelloWorld() throws Exception {
     driver.get(baseUrl);
-    assertEquals("Hello world", driver.getTitle());
+    assertEquals("Tic Tac Toe!", driver.getTitle());
   }
 
   @Test
